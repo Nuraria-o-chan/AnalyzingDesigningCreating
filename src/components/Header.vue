@@ -1,12 +1,28 @@
+<script setup>
+defineProps({
+  searchQuery: String,
+  onDownload: Function,
+})
+
+const emit = defineEmits(['update:searchQuery'])
+</script>
+
 <template>
   <header>
     <h1>Таблица учреждений</h1>
     <div class="groupInputs">
       <div class="inputSearch">
-        <input type="serch" placeholder="Поиск..." />
+        <input
+          type="serch"
+          placeholder="Поиск..."
+          :value="searchQuery"
+          @input="emit('update:searchQuery', $event.target.value)"
+        />
         <img class="search" src="@/assets/icons/search.svg" alt="search" />
       </div>
-      <button><img src="@/assets/icons/documents.svg" alt="documentsSvg" />Скачать</button>
+      <button @click="onDownload && onDownload()">
+        <img src="@/assets/icons/documents.svg" alt="documentsSvg" />Скачать
+      </button>
     </div>
   </header>
 </template>
@@ -36,7 +52,7 @@ header {
     input {
       border: 1px solid #d3d3de;
       border-radius: 10px;
-      padding: 16px 24px;
+      padding: 16px 60px 16px 24px;
       width: 300px;
       height: 56px;
       cursor: pointer;
