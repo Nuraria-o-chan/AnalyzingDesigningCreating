@@ -9,7 +9,7 @@ defineProps({
 })
 const emit = defineEmits(['update:page', 'update:limit'])
 
-// Функция для построения массива кнопок (с номерами и "…")
+// Функция для построения массива кнопок с номерами и "…", решила без библиотек обойтись
 function getPages(current, total) {
   const pages = []
   if (total <= 7) {

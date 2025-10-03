@@ -131,7 +131,7 @@ watch(
         districts.value = []
         regions.value = []
       } finally {
-        isLoading.value = false // выключаем лоадер
+        isLoading.value = false 
       }
     }, 500)
   },
@@ -169,7 +169,7 @@ const selectedRegions = ref([])
 
       <TableFilters title="Все статусы" :options="statusOptions" v-model="filters.status" />
     </div>
-    <!-- рендерим только одну таблицу -->
+
     <TableContent v-if="schools.length" :schools="schools" />
     <!-- лоадер -->
     <div v-if="isLoading" class="loader-wrapper">

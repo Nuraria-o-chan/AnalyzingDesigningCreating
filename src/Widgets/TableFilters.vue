@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 const props = defineProps({
   title: { type: String, default: 'Фильтр' },
-  options: { type: Array, default: () => [] }, // [{ label, value }]
+  options: { type: Array, default: () => [] }, 
   modelValue: { type: String, default: '' },
 })
 
@@ -83,7 +83,6 @@ function selectOption(opt) {
   margin: 2px 4px;
   border-radius: 12px;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
 .filter-option:hover {

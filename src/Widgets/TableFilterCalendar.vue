@@ -2,7 +2,6 @@
   <div class="dropdown">
     <p>data</p>
     <img src="@/assets/icons/calendar-time.svg" alt="calendar" />
-    <!-- <input type="text" placeholder="kj" /> -->
   </div>
 </template>
 
